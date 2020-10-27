@@ -30,6 +30,7 @@ addButton.click(function(){
         panier.append($("<option></option>").attr("value", fruit).text(fruit));
         fruits.children('[value="'+ fruit + '"]').remove()
         fruit = null;
+        addButton.attr("disabled", fruit === null);
     }
 })
 
@@ -39,5 +40,6 @@ delButton.click(function(){
         fruits.append($("<option></option>").attr("value", fruitToDel).text(fruitToDel));
         panier.children('[value="'+ fruitToDel + '"]').remove()
         fruitToDel = null;
+        delButton.attr("disabled", fruitToDel === null);
     }
 })
